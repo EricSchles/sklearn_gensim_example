@@ -25,7 +25,7 @@ def fit_classifier(X, y, C=0.1):
 def fit_lda(X, vocab, num_topics=5, passes=20):
     """ Fit LDA from a scipy CSR matrix (X). """
     print('fitting lda...')
-    return LdaModel(matutils.Sparse2Corpus(X), num_topics=num_topics,
+    return LdaModel(matutils.Sparse2Corpus(X.T), num_topics=num_topics,
                     passes=passes,
                     id2word=dict([(i, s) for i, s in enumerate(vocab)]))
 
